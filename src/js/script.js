@@ -14,23 +14,33 @@ $(document).ready(function() {
   // Set today's date.
   $('.today-date').html(moment().format('dddd<br>MMMM Do<br>YYYY'));
 
-  // Get bus updates every 30 seconds (10*1000).
-  setInterval(getUpcomingBusses, config.busRefreshSeconds * 1000);
-
   // Get weather updates every 5 minutes (1000*60*5).
   setInterval(getForecast, config.forecastRefreshMinutes * 1000 * 60);
 
+  // Show bus arrivals once we click the start button.
+  $('.arrivals-overlay').click(function () {
+    $(this).hide();
+
+    startShowingBusArrivals();
+  })
+
 });
 
+function startShowingBusArrivals () {
+  // Show bus arrivals.
+  getUpcomingArrivals();
+
+  // Get arrival updates every 30 seconds (10*1000).
+  setInterval(getUpcomingArrivals, config.busRefreshSeconds * 1000);
+}
+
 // Show a progress bar for the next bus reset.
-animateRefreshBar();
 function animateRefreshBar () {
   $('.refresh-bar').html('').append('<div class="refresh-bar-progress"></div>');
 }
 
 // Get upcoming bus arrivals.
-getUpcomingBusses();
-function getUpcomingBusses () {
+function getUpcomingArrivals () {
 
   // Clear out existing arrivals.
   $('.arrivals').removeClass('populated');

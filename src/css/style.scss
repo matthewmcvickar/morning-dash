@@ -89,7 +89,6 @@ h3 {
 // Arrivals.
 
 .arrivals {
-
   .arrival {
     transition: opacity 0.5s linear;
     opacity: 0;
@@ -100,6 +99,36 @@ h3 {
       opacity: 1;
     }
   }
+}
+
+.arrivals-overlay {
+  z-index: 2;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: black;
+}
+
+.arrivals-start-button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+
+  background-image: linear-gradient(to bottom, lighten($trimet-blue, 15%), $trimet-blue);
+  color: white;
+
+  border-radius: 50%;
+  font-size: 36px;
+
+  text-align: center;
+  line-height: 300px;
 }
 
 $arrival-dimension: 165px;
