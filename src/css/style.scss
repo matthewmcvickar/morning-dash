@@ -1,0 +1,266 @@
+// Normalize.css.
+@import "normalize.css/normalize";
+
+// Variables, and mixins.
+@import "variables";
+@import "mixins";
+
+// Cascading style sheet.
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+
+  font-family: $font-body;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+
+  font-family: $font-heading;
+}
+
+.site-container {
+  width: 1024px;
+  height: 748px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.left-column,
+.right-column {
+  position: relative;
+  height: 100%;
+
+  padding: 0.5rem;
+}
+
+.left-column {
+  width: 62%;
+
+  background-color: #000;
+  color: #fff;
+}
+
+.right-column {
+  width: 38%;
+
+  background: #eaeaea;
+}
+
+.refresh-bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+}
+
+.refresh-bar-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: #fff;
+
+  animation-duration: 30s;
+  animation-name: progress-bar;
+  animation-timing-function: linear;
+}
+
+@keyframes progress-bar {
+  from { width: 0%;   }
+  to   { width: 100%; }
+}
+
+
+// Arrivals.
+
+.arrivals {
+
+  .arrival {
+    transition: opacity 0.5s linear;
+    opacity: 0;
+  }
+
+  &.populated {
+    .arrival {
+      opacity: 1;
+    }
+  }
+}
+
+$arrival-dimension: 165px;
+
+.arrival {
+  height: $arrival-dimension;
+
+  margin-bottom: 1rem;
+
+  font-size: 145px;
+}
+
+.arrival-route,
+.arrival-from-now,
+.arrival-time {
+  display: inline-block;
+}
+
+.arrival-route {
+  position: relative;
+
+  width: $arrival-dimension;
+  height: $arrival-dimension;
+
+  margin-right: 30px;
+
+  vertical-align: top;
+
+  color: #fff;
+
+  border-radius: 20%;
+
+  white-space: nowrap;
+
+  span {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+
+    letter-spacing: -20px;
+  }
+
+  &.route-12 {
+    background-color: $trimet-blue;
+  }
+
+  &.route-19 {
+    background-color: $trimet-red;
+  }
+}
+
+.arrival-from-now {
+  vertical-align: -5px;
+
+  letter-spacing: -6px;
+
+  &.time-estimated {
+    color: lightblue;
+  }
+
+  &.time-now {
+    color: yellow;
+    text-transform: uppercase;
+  }
+}
+
+.arrival-time {
+  display: none;
+}
+
+
+// Today's date.
+
+h1.today-date {
+  margin: 0;
+
+  font-size: 4.5em;
+  letter-spacing: -1px;
+  text-align: center;
+
+  color: #888;
+}
+
+
+// Weather.
+
+.weather {
+  @include clearfix;
+
+  margin-top: 2rem;
+
+  text-align: center;
+}
+
+.weather-temp-now {
+
+  font-size: 130px;
+
+  &:after {
+    content: "º";
+    font-size: 60%;
+    vertical-align: top;
+  }
+
+  // Re-center the temperature, disregarding the space taken up by the degree
+  // symbol.
+  margin-left: 30px;
+}
+
+.weather-temp-high-and-low {
+  @include clearfix;
+
+  margin: 1rem 0;
+}
+
+.weather-temp-low,
+.weather-temp-high {
+  position: relative;
+
+  float: left;
+  width: 50%;
+
+  font-size: 70px;
+
+  &:after {
+    content: "º";
+    font-size: 60%;
+    vertical-align: top;
+  }
+
+  &:before {
+    margin-right: -25px;
+  }
+}
+
+.weather-temp-low {
+  &:before {
+    content: "↓";
+  }
+
+  color: darkblue;
+}
+
+.weather-temp-high {
+  &:before {
+    content: "↑";
+  }
+
+  color: darkred;
+}
+
+.weather-icon-container {
+  //
+}
+
+.weather-icon {
+  //
+}
+
+.weather-summary {
+  margin-top: 1rem;
+
+  font-size: 32px;
+}

@@ -1,0 +1,7 @@
+.DS_Store
+.tmp
+config.js
+node_modules
+lib.js
+script.js
+style.css
