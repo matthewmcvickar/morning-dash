@@ -3,5 +3,5 @@
 config.js
 node_modules
 lib.js
-script.js
-style.css
+/script.js
+/style.css
