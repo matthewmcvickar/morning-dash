@@ -156,7 +156,7 @@ function getForecast () {
   });
 }
 
-// Customize Moment strings to be .
+// Customize Moment strings to be very short.
 moment.updateLocale('en', {
   relativeTime : {
     future: 'in %s',
