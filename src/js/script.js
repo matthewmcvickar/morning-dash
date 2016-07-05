@@ -14,7 +14,7 @@ $(document).ready(function() {
   // Set today's date.
   $('.today-date').html(moment().format('dddd<br>MMMM Do<br>YYYY'));
 
-  // Get weather updates every 5 minutes (1000*60*5).
+  // Get weather updates every X minutes. (5 by default.)
   setInterval(getForecast, config.forecastRefreshMinutes * 1000 * 60);
 
   // Show bus arrivals once we click the start button.
@@ -30,7 +30,7 @@ function startShowingBusArrivals () {
   // Show bus arrivals.
   getUpcomingArrivals();
 
-  // Get arrival updates every 30 seconds (10*1000).
+  // Get arrival updates every X seconds. (30 by default.)
   setInterval(getUpcomingArrivals, config.busRefreshSeconds * 1000);
 }
 
@@ -46,7 +46,7 @@ function getUpcomingArrivals () {
   $('.arrivals').removeClass('populated');
 
   // Wait one second for the previous arrivals to be faded out.
-  setTimeout(function() {
+  setTimeout(function () {
 
     // Restart progess bar.
     animateRefreshBar();
@@ -57,7 +57,7 @@ function getUpcomingArrivals () {
     // Make API request.
     var url = 'http://developer.trimet.org/ws/v2/arrivals?locIDs=' + config.trimetStopIDs + '&appID=' + config.trimetAPIKey;
 
-    $.getJSON(url, function(data) {
+    $.getJSON(url, function (data) {
 
         var arrivals = data.resultSet.arrival;
 
@@ -92,7 +92,7 @@ function getUpcomingArrivals () {
           var output =
             '<div class="arrival">' +
               '<span class="arrival-route route-' + route + '"><span>' + route + '</span></span>' +
-              '<span class="arrival-from-now time-' + timeType + '">' + time + '</span>'
+              '<span class="arrival-from-now time-' + timeType + '">' + time + '</span>' +
             '</div>';
 
           // Populate arrivals.
@@ -127,7 +127,7 @@ function getForecast () {
   $.ajax({
     url: 'https://api.forecast.io/forecast/' + config.forecastAPIKey + '/' + config.latitudeLongitude,
     dataType: 'jsonp',
-    success: function(data) {
+    success: function (data) {
 
       console.log('Forecast:', data);
       console.log('Forecast.io API request complete.');
@@ -156,7 +156,7 @@ function getForecast () {
   });
 }
 
-// Customize Moment strings.
+// Customize Moment strings to be .
 moment.updateLocale('en', {
   relativeTime : {
     future: 'in %s',
