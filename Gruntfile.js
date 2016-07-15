@@ -64,6 +64,19 @@ module.exports = function(grunt) {
       }
     },
 
+    // Optimize SVGs.
+    svgmin: {
+      build: {
+        files: [{
+          expand: true,
+          cwd: 'src/img',
+          src: ['**/*.svg'],
+          dest: 'img/',
+          ext: '.svg'
+        }]
+      }
+    },
+
     // BrowserSync
     browserSync: {
       files: ['style.css'],
@@ -115,9 +128,14 @@ module.exports = function(grunt) {
         tasks: ['imagemin']
       },
 
+      svgmin: {
+        files: ['src/img/**/*.svg'],
+        tasks: ['svgmin']
+      },
+
       reload: {
         files: [
-          'index.html',
+          'index.php',
           'script.js',
           'config.js'
         ],
@@ -135,6 +153,7 @@ module.exports = function(grunt) {
       'sass',
       'autoprefixer',
       'imagemin',
+      'svgmin',
       'uglify'
     ]
   );

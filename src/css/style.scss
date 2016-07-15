@@ -29,7 +29,28 @@ h3 {
   font-family: $font-heading;
 }
 
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  svg {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+
+    path {
+      fill: currentColor;
+    }
+  }
+}
+
 .site-container {
+  position: relative;
+
   width: 1024px;
   height: 748px;
 
@@ -57,6 +78,35 @@ h3 {
 
   background: #eaeaea;
 }
+
+
+// Refresh button.
+.refresh-button {
+  display: block;
+
+  position: absolute;
+  right: -22px;
+  bottom: 5px;
+  z-index: 4;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  background-color: darkorange;
+  color: #fff;
+
+  text-align: center;
+
+  .icon {
+    margin-top: 3px;
+
+    width: 28px;
+  }
+}
+
+
+// Refresh bar.
 
 .refresh-bar {
   position: absolute;
@@ -200,16 +250,36 @@ $arrival-dimension: 165px;
 }
 
 
+// Clock.
+
+.clock {
+  margin-top: -25px;
+
+  font-size: 160px;
+  letter-spacing: 3px;
+  text-align: left;
+
+  span {
+    display: inline-block;
+    margin-left: -4px;
+
+    color: $medium-gray;
+    font-size: 48px;
+    letter-spacing: 0;
+  }
+}
+
+
 // Today's date.
 
 h1.today-date {
   margin: 0;
 
-  font-size: 4.5em;
+  font-size: 30px;
   letter-spacing: -1px;
   text-align: center;
 
-  color: #888;
+  color: $medium-gray;
 }
 
 
@@ -218,13 +288,12 @@ h1.today-date {
 .weather {
   @include clearfix;
 
-  margin-top: 2rem;
+  margin-top: 3rem;
 
   text-align: center;
 }
 
 .weather-temp-now {
-
   font-size: 130px;
 
   &:after {
@@ -240,12 +309,10 @@ h1.today-date {
 
 .weather-temp-high-and-low {
   @include clearfix;
-
-  margin: 1rem 0;
 }
 
-.weather-temp-low,
-.weather-temp-high {
+.weather-temp-low-container,
+.weather-temp-high-container {
   position: relative;
 
   float: left;
@@ -259,37 +326,36 @@ h1.today-date {
     vertical-align: top;
   }
 
-  &:before {
-    margin-right: -25px;
+  .icon {
+    width: 30px;
+    margin-right: 0.25rem;
+    opacity: 0.5;
   }
 }
 
-.weather-temp-low {
-  &:before {
-    content: "↓";
-  }
-
+.weather-temp-low-container {
   color: darkblue;
 }
 
-.weather-temp-high {
-  &:before {
-    content: "↑";
-  }
-
+.weather-temp-high-container {
   color: darkred;
 }
 
 .weather-icon-container {
-  //
+  margin-top: 2rem;
 }
 
 .weather-icon {
   //
 }
 
-.weather-summary {
-  margin-top: 1rem;
-
+.weather-summary-now {
   font-size: 32px;
+}
+
+.weather-summary-day {
+  margin-top: 2.5rem;
+  padding: 0 2rem;
+
+  font-size: 24px;
 }

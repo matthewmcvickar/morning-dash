@@ -12,7 +12,10 @@ if (typeof(config) === 'undefined') {
 $(document).ready(function() {
 
   // Set today's date.
-  $('.today-date').html(moment().format('dddd<br>MMMM Do<br>YYYY'));
+  $('.today-date').html(moment().format('dddd, MMMM Do'));
+
+  // Show clock.
+  setInterval(updateClock, 1000);
 
   // Get weather updates every X minutes. (5 by default.)
   setInterval(getForecast, config.forecastRefreshMinutes * 1000 * 60);
@@ -25,6 +28,11 @@ $(document).ready(function() {
   })
 
 });
+
+
+function updateClock() {
+  $('.clock').html(moment().format('h:mm[<span>]ss[</span>]'));
+}
 
 function startShowingBusArrivals () {
   // Show bus arrivals.
@@ -132,17 +140,19 @@ function getForecast () {
       console.log('Forecast:', data);
       console.log('Forecast.io API request complete.');
 
-      var tempNow  = Math.ceil(data.currently.temperature),
-          tempLow  = Math.ceil(data.daily.data[0].temperatureMin),
-          tempHigh = Math.ceil(data.daily.data[0].temperatureMax),
-          summary  = data.daily.data[0].summary,
-          iconNow  = data.daily.data[0].icon;
+      var tempNow    = Math.ceil(data.currently.temperature),
+          tempLow    = Math.ceil(data.daily.data[0].temperatureMin),
+          tempHigh   = Math.ceil(data.daily.data[0].temperatureMax),
+          summaryNow = data.currently.summary,
+          summaryDay = data.hourly.summary,
+          iconNow    = data.currently.icon;
 
       // Populate text.
       $('.weather-temp-now').append(tempNow);
       $('.weather-temp-low').append(tempLow);
       $('.weather-temp-high').append(tempHigh);
-      $('.weather-summary').append(summary);
+      $('.weather-summary-now').append(summaryNow);
+      $('.weather-summary-day').append(summaryDay);
 
       // Make icon.
       skycons.set('weather-icon', iconNow);
