@@ -31,23 +31,11 @@ h3 {
   font-family: $font-heading;
 }
 
-.icon {
+img {
   display: inline-block;
-  width: 20px;
-  height: 20px;
 
   max-width: 100%;
-  max-height: 100%;
-
-  svg {
-    width: 100%;
-    min-width: 100%;
-    height: auto;
-
-    path {
-      fill: currentColor;
-    }
-  }
+  height: auto;
 }
 
 .site-container {
@@ -87,12 +75,12 @@ h3 {
   display: block;
 
   position: absolute;
-  right: -22px;
+  right: -20px;
   bottom: 5px;
   z-index: 4;
 
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
 
   background-color: darkorange;
@@ -100,10 +88,9 @@ h3 {
 
   text-align: center;
 
-  .icon {
-    margin-top: 3px;
-
-    width: 28px;
+  img {
+    width: 30px;
+    margin-top: 8px;
   }
 }
 
@@ -328,10 +315,12 @@ h1.today-date {
     vertical-align: top;
   }
 
-  .icon {
+  img {
     width: 30px;
-    margin-right: 0.25rem;
+    margin-right: 6px;
     opacity: 0.5;
+
+    vertical-align: 8px;
   }
 }
 

@@ -30,14 +30,6 @@
 
 <body>
 
-<?php
-function get_svg($name) {
-  echo '<span class="icon icon-' . $name . '">';
-  include('img/' . $name . '.svg');
-  echo '</span>';
-}
-?>
-
 <div class="site-container">
 
   <div class="left-column">
@@ -46,7 +38,7 @@ function get_svg($name) {
     </div>
     <div class="arrivals"></div>
     <div class="refresh-bar"></div>
-    <a class="refresh-button" href="./"><?php get_svg('refresh'); ?></a>
+    <a class="refresh-button" href="./"><img src="img/refresh.png"></a>
   </div>
 
   <div class="right-column">
@@ -56,8 +48,8 @@ function get_svg($name) {
     <div class="weather">
       <div data-target="weather" class="weather-temp-now">…</div>
       <div class="weather-temp-high-and-low">
-        <div class="weather-temp-low-container"><?php get_svg('arrow-down'); ?><span data-target="weather" class="weather-temp-low">…</span></div>
-        <div class="weather-temp-high-container"><?php get_svg('arrow-up'); ?><span data-target="weather" class="weather-temp-high">…</span></div>
+        <div class="weather-temp-low-container"><img src="img/arrow-down.png"><span data-target="weather" class="weather-temp-low">…</span></div>
+        <div class="weather-temp-high-container"><img src="img/arrow-up.png"><span data-target="weather" class="weather-temp-high">…</span></div>
       </div>
       <div class="weather-icon-container"><canvas id="weather-icon" width="128" height="128"></canvas></div>
       <div data-target="weather" class="weather-summary-now"></div>
