@@ -32,6 +32,12 @@ $(document).ready(function() {
 
 function updateClock() {
   $('.clock').html(moment().format('h:mm[<span>]ss[</span>]'));
+
+  var hour = moment().hour();
+
+  if ((hour > 9 && hour < 13) || hour > 21) {
+    $('.clock').addClass('double-digit-hour');
+  }
 }
 
 function startShowingBusArrivals () {

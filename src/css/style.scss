@@ -244,13 +244,17 @@ $arrival-dimension: 165px;
 .clock {
   margin-top: -25px;
 
-  font-size: 160px;
+  font-size: 156px;
   letter-spacing: 3px;
-  text-align: left;
+  text-align: center;
+
+  &.double-digit-hour {
+    margin-top: -15px;
+    font-size: 120px;
+  }
 
   span {
     display: inline-block;
-    margin-left: -4px;
 
     color: $medium-gray;
     font-size: 48px;
