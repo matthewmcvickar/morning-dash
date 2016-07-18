@@ -135,7 +135,7 @@ module.exports = function(grunt) {
 
       reload: {
         files: [
-          'index.php',
+          'index.html',
           'script.js',
           'config.js'
         ],
