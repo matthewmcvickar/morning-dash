@@ -8,9 +8,9 @@ var config = {
   // http://trimet.org/ride/stop_select_form.html
   trimetStopIDs: '',
 
-  // Forecast/Dark Sky API.
-  // https://developer.forecast.io/
-  forecastAPIKey: '',
+  // Dark Sky API.
+  // https://darksky.net/dev
+  darkSkyAPIKey: '',
 
   // Latitude/Longitude. Used for getting weather.
   // Comma-separated without spaces, e.g.: -68.5741796,77.9727334

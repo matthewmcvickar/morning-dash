@@ -139,12 +139,12 @@ function getForecast () {
   $('.weather [data-target="weather"]').html('');
 
   $.ajax({
-    url: 'https://api.forecast.io/forecast/' + config.forecastAPIKey + '/' + config.latitudeLongitude,
+    url: 'https://api.darksky.net/forecast/' + config.darkSkyAPIKey + '/' + config.latitudeLongitude,
     dataType: 'jsonp',
     success: function (data) {
 
       console.log('Forecast:', data);
-      console.log('Forecast.io API request complete.');
+      console.log('Dark Sky API request complete.');
 
       var tempNow    = Math.ceil(data.currently.temperature),
           tempLow    = Math.ceil(data.daily.data[0].temperatureMin),
