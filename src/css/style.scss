@@ -70,6 +70,15 @@ img {
 }
 
 
+// Random image.
+.random-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+
 // Refresh button.
 .refresh-button {
   display: block;
@@ -149,7 +158,7 @@ img {
   width: 100%;
   height: 100%;
 
-  background-color: black;
+  // background-color: black;
 }
 
 .arrivals-start-button {

@@ -18,11 +18,22 @@ $(document).ready(function() {
   setInterval(updateClock, 1000);
 
   // Get weather updates every X minutes. (5 by default.)
+  getForecast();
   setInterval(getForecast, config.forecastRefreshMinutes * 1000 * 60);
+
+  // Get a new random background image, and then do so every minute.
+  getRandomImage();
+  window.randomImageInterval = setInterval(getRandomImage, 60000);
 
   // Show bus arrivals once we click the start button.
   $('.arrivals-overlay').click(function () {
+
+    // Hide button.
     $(this).hide();
+
+    // Hide random image and stop it from refreshing.
+    $('.random-image').hide();
+    clearInterval(window.randomImageInterval);
 
     startShowingBusArrivals();
   })
@@ -134,7 +145,6 @@ function getUpcomingArrivals () {
 }
 
 // Get weather.
-getForecast();
 function getForecast () {
   $('.weather [data-target="weather"]').html('');
 
@@ -184,3 +194,8 @@ moment.updateLocale('en', {
     hh: '%dhrs'
   }
 });
+
+// Get a new random image every minute.
+function getRandomImage() {
+  $('.random-image').attr('src', config.randomImageURL + '&' + new Date().getTime());
+}

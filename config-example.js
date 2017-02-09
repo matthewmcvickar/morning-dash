@@ -22,5 +22,10 @@ var config = {
   // Forecast.io only allows 1000 requests every 24 hours, and the weather fore-
   // cast doesn't change that much, so take it easy.
   busRefreshSeconds: 30,
-  forecastRefreshMinutes: 5
+  forecastRefreshMinutes: 5,
+
+  // Random image URL. Shows a random image every minute behind the 'Show
+  // Arrivals' button. By default, uses the Unsplash.it API.
+  // https://unsplash.it/
+  randomImageURL: 'https://unsplash.it/g/635/748/?random&gravity=east'
 };
