@@ -5,7 +5,7 @@ var config = {
 
   // Four-digit Trimet stop IDs.
   // Comma-separated without spaces, e.g.: 2042,5063,2159
-  // http://trimet.org/ride/stop_select_form.html
+  // https://trimet.org/ride/stop_select_form.html
   trimetStopIDs: '',
 
   // Dark Sky API.
@@ -14,7 +14,7 @@ var config = {
 
   // Latitude/Longitude. Used for getting weather.
   // Comma-separated without spaces, e.g.: -68.5741796,77.9727334
-  // http://mygeoposition.com
+  // https://mynasadata.larc.nasa.gov/latitudelongitude-finder/
   latitudeLongitude: '',
 
   // Refresh rates. Don't abuse the system! Trimet doesn't give a recommended

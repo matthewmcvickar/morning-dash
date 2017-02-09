@@ -69,7 +69,7 @@ function getUpcomingArrivals () {
     $('.arrivals').html('');
 
     // Make API request.
-    var url = 'http://developer.trimet.org/ws/v2/arrivals?locIDs=' + config.trimetStopIDs + '&appID=' + config.trimetAPIKey;
+    var url = 'https://developer.trimet.org/ws/v2/arrivals?locIDs=' + config.trimetStopIDs + '&appID=' + config.trimetAPIKey;
 
     $.getJSON(url, function (data) {
 
