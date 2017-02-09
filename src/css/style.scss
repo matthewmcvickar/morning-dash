@@ -75,22 +75,22 @@ img {
   display: block;
 
   position: absolute;
-  right: -29px;
+  right: -39px;
   bottom: 5px;
   z-index: 4;
 
-  width: 55px;
-  height: 55px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
 
-  background-color: darkorange;
+  background-color: #aaa;
   color: #fff;
 
   text-align: center;
 
   img {
-    width: 30px;
-    margin-top: 12px;
+    width: 40px;
+    margin-top: 17px;
   }
 }
 
@@ -161,7 +161,8 @@ img {
   transform: translate(-50%, -50%);
 
   background-image: linear-gradient(to bottom, lighten($trimet-blue, 15%), $trimet-blue);
-  color: white;
+  // background-image: linear-gradient(to bottom, #888, #333);
+  color: #fff;
 
   border-radius: 50%;
   font-size: 36px;
@@ -198,7 +199,7 @@ $arrival-dimension: 165px;
 
   color: #fff;
 
-  border-radius: 20%;
+  border-radius: 15%;
 
   white-space: nowrap;
 
