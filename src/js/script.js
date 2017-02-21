@@ -21,9 +21,15 @@ $(document).ready(function() {
   getForecast();
   setInterval(getForecast, config.forecastRefreshMinutes * 1000 * 60);
 
-  // Get a new random background image, and then do so every minute.
-  getRandomImage();
-  window.randomImageInterval = setInterval(getRandomImage, 60000);
+  // Get a new random background image once we ask for it.
+  $('.random-image-button').click(function () {
+    // Start getting random images every minute.
+    getRandomImage();
+    window.randomImageInterval = setInterval(getRandomImage, 60000);
+
+    // Hide button.
+    $(this).hide();
+  });
 
   // Show bus arrivals once we click the start button.
   $('.arrivals-overlay').click(function () {
@@ -36,7 +42,7 @@ $(document).ready(function() {
     clearInterval(window.randomImageInterval);
 
     startShowingBusArrivals();
-  })
+  });
 
 });
 

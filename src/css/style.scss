@@ -70,22 +70,17 @@ img {
 }
 
 
-// Random image.
-.random-image {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 1;
+// Buttons.
+button {
+  border: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
 }
 
-
-// Refresh button.
-.refresh-button {
+.button {
   display: block;
 
   position: absolute;
-  right: -39px;
-  bottom: 5px;
   z-index: 4;
 
   width: 75px;
@@ -99,6 +94,34 @@ img {
 
   img {
     width: 40px;
+  }
+}
+
+
+// Random image.
+.random-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.random-image-button {
+  left: 5px;
+  bottom: 5px;
+
+  img {
+    margin-top: 4px;
+  }
+}
+
+
+// Refresh button.
+.refresh-button {
+  right: -39px;
+  bottom: 5px;
+
+  img {
     margin-top: 17px;
   }
 }
