@@ -37,8 +37,9 @@ $(document).ready(function() {
     // Hide button.
     $(this).hide();
 
-    // Hide random image and stop it from refreshing.
+    // Hide and image button and random image and stop it from refreshing.
     $('.random-image').hide();
+    $('.random-image-button').hide();
     clearInterval(window.randomImageInterval);
 
     startShowingBusArrivals();
