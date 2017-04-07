@@ -240,15 +240,19 @@ $arrival-dimension: 165px;
     left: 5px;
     top: 5px;
 
-    letter-spacing: -20px;
-  }
-
-  &.route-12 {
-    background-color: $trimet-blue;
+    letter-spacing: -10px;
   }
 
   &.route-19 {
+    background-color: $trimet-blue;
+  }
+
+  &.route-20 {
     background-color: $trimet-red;
+  }
+
+  &.route-x {
+    background-color: $trimet-yellow;
   }
 }
 
